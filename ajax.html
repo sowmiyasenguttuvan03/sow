@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="ajax.css">
+    <style>
+      body{
+        background-image: url("https://cdn.wallpapersafari.com/15/6/eaiTgz.jpg");
+        background-repeat: no-repeat;
+      }
+      .nav_link{
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 1em;
+      }
+      .nav{
+        margin-left: 1500px;
+        font-size: 25px;
+        margin-top: -280px;
+      }
+      #txtHint{
+        color: white;
+        font-size: 20px;
+      }
+      #txt1{
+        margin-top: 250px;
+        margin-left: 750px;
+        width: 400px;
+        height: 40px;
+        border-radius: 15px;
+        font-size: 20px;
+      }
+      img{
+        height:70px;
+        width:70px;
+        margin-top: 50px;
+        padding: 8px;
+      }
+    </style>
+
+</head>
+<body>
+  <div class="dark fire">
+    <h1 class="CHROGLE" contenteditable="true">CHROGLE</h1>
+    </div>
+    <nav class="nav" >
+      <a href="#" class="nav_link">Gmail</a>
+      <a href="#" class="nav_link">Images</a>
+      <a href="#" class="nav_link">Sign in</a></nav>
+      <div class="input-icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <input class="input-field"  type="text" id="txt1" onkeyup="showHint(this.value)" placeholder="Search"><br>    
+  </div>
+     <center><span id="txtHint"></span></center>
+     <img style="margin-left: 720px; border-radius: 80%;" src="https://w7.pngwing.com/pngs/945/191/png-transparent-gmail-logo-computer-icons-gmail-scalable-graphics-email-gmail-size-icon-angle-text-trademark-thumbnail.png">
+     <img style="border-radius: 80%;"src="https://w7.pngwing.com/pngs/760/960/png-transparent-youtube-computer-icons-logo-youtube-angle-black-desktop-wallpaper-thumbnail.png">
+     <img style="border-radius: 80%;" src="https://w7.pngwing.com/pngs/782/676/png-transparent-google-chrome-computer-icons-web-browser-others-miscellaneous-logo-google-chrome-thumbnail.png">
+     <img style="border-radius: 80%;" src="https://www.pngitem.com/pimgs/m/32-327333_png-file-svg-document-icon-transparent-circle-png.png">
+     <img style="border-radius: 25%;" src="https://icon-library.com/images/discord-white-icon/discord-white-icon-27.jpg">
+<script>
+function showHint(str) {
+  if (str.length == 0) { 
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("txtHint").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "gethint.php?q="+str);
+  xhttp.send();   
+}
+</script>
+
+</body>
+</html>
