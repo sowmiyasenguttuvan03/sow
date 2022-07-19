@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void) {
+    int T,a,b;
+    char S[50];
+    char N[50];
+    scanf("%d",&T);
+    for(int i=0;i<T;i++){
+        scanf("%s",&S);
+        scanf("%s",&N);
+        a=strlen(S);
+        b=strlen(N);
+        if(a==b){
+            for(int j=0;j<a;j++){
+                if(S[j]==N[j]){
+                    printf("G");
+                }
+                else{
+                    printf("B");
+                }
+            }
+            printf("\n");
+        }   
+    }
+    return 0;
+}
